@@ -1,3 +1,7 @@
+![logo](./logo.jpg)
+
+# obsidian custom css
+
 ## General
 
 A simple Obsidian theme inspired by Typora and GitHub.
