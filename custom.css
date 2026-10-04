@@ -1,17 +1,17 @@
-/* エディタ両サイドの余白を広げる */
+/* Widen left/right padding in the editor */
 .markdown-source-view.mod-cm6 .cm-sizer,
 .markdown-preview-view .markdown-preview-sizer {
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
-/* 編集モード・プレビューモードの行間を広げる */
+/* Increase line height in edit and preview modes */
 
 .markdown-source-view.mod-cm6 .cm-line {
   line-height: 1.6;
 }
 
-/* コードブロックはTypora実機に近いタイトな行間に(```行の余白を詰める) */
+/* Keep code blocks tighter, closer to Typora (tighten ``` line spacing) */
 .markdown-source-view.mod-cm6 .HyperMD-codeblock {
   line-height: 1.6;
 }
@@ -25,7 +25,7 @@
   font-weight: 300;
 }
 
-/* コード部分は本文の細さ設定から除外して太めに */
+/* Keep code heavier than the light body text weight */
 .markdown-rendered code,
 .markdown-rendered pre,
 .cm-s-obsidian .HyperMD-codeblock,
@@ -33,13 +33,13 @@
   font-weight: 500 !important;
 }
 
-/* タイトルと本文最初の見出しとの間隔を広げる */
+/* Add space between the title and the first heading */
 .inline-title {
   margin-bottom: 1.5rem;
   font-weight: 575 !important;
 }
 
-/* 見出し */
+/* Headings */
 h1 {
   padding-bottom: 0;
   margin-bottom: 1.5rem;
@@ -96,14 +96,14 @@ h6,
   line-height: 0.85;
 }
 
-/* リスト: バレットを濃く・少し大きく */
+/* Lists: darker, slightly larger bullets */
 .markdown-source-view.mod-cm6,
 .markdown-preview-view {
   --list-marker-color: var(--text-normal);
   --list-bullet-size: 0.4em;
 }
 
-/* リスト: 階層ごとにバレット形状を変える(Typora準拠: 1階層目=●, 2階層目=○, 3階層目以降=■) */
+/* Lists: nest-level bullet shapes (Typora-style: ● / ○ / ■) */
 .markdown-rendered li li .list-bullet:after,
 .HyperMD-list-line-2 .list-bullet:after {
   background-color: transparent;
@@ -122,13 +122,13 @@ h6,
   border-radius: 0;
 }
 
-/* チェックボックスを少し小さく */
+/* Slightly smaller checkboxes */
 .markdown-source-view.mod-cm6,
 .markdown-preview-view {
   --checkbox-size: 0.8em;
 }
 
-/* リスト: 編集モードでドット・番号と文字の間隔を広げる */
+/* Lists: more space between markers/numbers and text in edit mode */
 .markdown-source-view.mod-cm6 .list-bullet {
   margin-inline-end: 0.45em;
 }
@@ -137,22 +137,22 @@ h6,
   margin-inline-end: 0.45em;
 }
 
-/* 編集モード: 見出しと本文の間隔を広げる */
+/* Edit mode: more space between headings and body text */
 .markdown-source-view {
   --p-spacing-empty: 0.5rem;
 }
 
-/* 文字色をグレー寄りに */
+/* Shift body text toward gray */
 .theme-light {
   --text-normal: #4a4a4a;
 }
 
-/* コードブロックの縁取り色(Typora-Vue独自変数を上書き) */
+/* Code block border color (override Typora-Vue custom var) */
 .theme-light {
   --cus-code-block-border: #e4e7ea;
 }
 
-/* 見出し下線の色を本家に合わせる */
+/* Match heading underline color to upstream */
 .theme-light h1,
 .theme-light h2 {
   border-bottom-color: #ebebeb;
@@ -163,7 +163,7 @@ h6,
   border-bottom-color: #ebebeb;
 }
 
-/* コードブロック: Typora実機のCodeMirror配色(codemirror.css)に合わせる */
+/* Code blocks: match Typora CodeMirror colors (codemirror.css) */
 body {
   --code-border-width: 1px;
 }
@@ -184,7 +184,7 @@ body {
   --code-border-color: #e4e7ea;
 }
 
-/* 引用: 網掛けなし・文字色を薄めに・左枠と本文の間隔を広めに */
+/* Blockquotes: no fill, lighter text, wider gap from left border */
 .theme-light .markdown-rendered blockquote {
   background-color: transparent;
   border-left-color: #e4e7ea;
@@ -205,7 +205,7 @@ body {
   inset-inline-start: -0.5em;
 }
 
-/* インラインコード: Typora-Vueのオレンジ色付けを解除しGitHub風のグレー地に */
+/* Inline code: drop Typora-Vue orange tint for a GitHub-like gray look */
 .cm-s-obsidian span.cm-inline-code,
 .markdown-rendered p code,
 .markdown-rendered li code {
@@ -228,12 +228,12 @@ body {
   --code-border-color: #30363d;
 }
 
-/* カーソル行のハイライトを無効化 */
+/* Disable active line highlight */
 .cm-active.cm-line {
   background: transparent !important;
 }
 
-/* テーブル */
+/* Tables */
 table {
   border-collapse: collapse;
 }
@@ -250,7 +250,7 @@ th, td {
   vertical-align: middle !important;
 }
 
-/* テーブル: ヘッダ行を薄いグレー網掛けに、本文は1行おきに網掛け(Typora実機準拠のゼブラ模様) */
+/* Tables: light header fill + zebra rows (Typora-style) */
 table thead tr,
 table th {
   background-color: var(--background-secondary) !important;
@@ -259,4 +259,3 @@ table th {
 table tbody tr:nth-child(even) {
   background-color: var(--background-secondary);
 }
-
